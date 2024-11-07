@@ -33,20 +33,7 @@ function App() {
         <ColorModeContextProvider>
           <AntdApp>
             <DevtoolsProvider>
-              <Refine
-                dataProvider={dataProvider(gqlClient)}
-                liveProvider={liveProvider(wsClient)}
-                notificationProvider={useNotificationProvider}
-                routerProvider={routerBindings}
-                authProvider={authProvider}
-                options={{
-                  syncWithLocation: true,
-                  warnWhenUnsavedChanges: true,
-                  useNewQueryKeys: true,
-                  projectId: "M9LV4J-KxQXHA-9ipW2G",
-                  liveMode: "auto",
-                }}
-              >
+              <Refine>
                 <Routes>
                   <Route index element={<WelcomePage />} />
                 </Routes>
