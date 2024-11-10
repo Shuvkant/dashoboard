@@ -5,10 +5,8 @@ import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 import { useNotificationProvider } from "@refinedev/antd";
 import "@refinedev/antd/dist/reset.css";
 
-import dataProvider, {
-  GraphQLClient,
-  liveProvider,
-} from "@refinedev/nestjs-query";
+import { dataProvider, liveProvider } from "../providers";
+
 import routerBindings, {
   DocumentTitleHandler,
   UnsavedChangesNotifier,
@@ -24,6 +22,8 @@ function App() {
         <AntdApp>
           <DevtoolsProvider>
             <Refine>
+              dataProvider={dataProvider}
+              liveProvider={liveProvider}
               <Routes>
                 <Route index element={<WelcomePage />} />
               </Routes>
